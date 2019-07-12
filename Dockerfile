@@ -27,7 +27,7 @@ ENV CXXFLAGS="${CFLAGS}"
 RUN ./configure --prefix=/usr/local --enable-static --disable-shared \
  && make -j ${NUM_THREADS} \
  && make install
-COPY bench.sh /usr/local/bin/bench.sh
+COPY ./bin/bench.sh /usr/local/bin/bench.sh
 CMD ["/usr/local/bin/bench.sh"]
 VOLUME /input
 VOLUME /output
